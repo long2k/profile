@@ -1,0 +1,6 @@
+footer {
+    padding: 1rem;
+}
+footer > div {
+    font-weight: 500;
+}
