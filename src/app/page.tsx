@@ -1,0 +1,9 @@
+import Navigation from "@/components/Navigation";
+
+export default function Home() {
+  return (
+    <main className="w-full h-full">
+      <Navigation/>
+    </main>
+  );
+}
