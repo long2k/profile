@@ -5,6 +5,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./public/**/**/*.{svg}",
   ],
   theme: {
     extend: {
@@ -12,7 +13,8 @@ const config: Config = {
         "avatar": "url('/assets/image/avatar.jpg')"
       },
       colors: {
-        "primary-yellow": '#ffb400'
+        "primary-yellow": '#ffb400',
+        "primary-gray": "#252525"
       },
     },
   },

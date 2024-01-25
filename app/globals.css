@@ -29,3 +29,8 @@ body {
 .box {
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.9);
 }
+
+
+.svg-image {
+  fill: #ffffff; /* Change this to the desired color */
+}
