@@ -34,3 +34,18 @@ body {
 .svg-image {
   fill: #ffffff; /* Change this to the desired color */
 }
+
+.square {
+  position: absolute;
+  content: "";
+  background-color: white;
+  height: 180%;
+  width: 1px;
+  top: 100%;
+  left: 50%;
+  
+}
+
+circle {
+  transition: all 0.7s ease-in-out;
+}
