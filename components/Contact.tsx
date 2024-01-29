@@ -3,7 +3,17 @@ import MapIcon from "@/common/svg/MapIcon";
 
 const Contact = () => {
   return (
-    <section className="w-full h-full container mx-auto lg:px-0 px-[10px]">
+    <section
+      data-aos="fade-down"
+      data-aos-offset="200"
+      data-aos-delay="500"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top-center"
+      className="w-full h-full container mx-auto lg:px-0 px-[10px] py-[20px]"
+    >
       <div className="uppercase font-bold w-full py-[80px] text-4xl text-center">
         Get In{" "}
         <span className="text-primary-yellow font-bold uppercase">Touch</span>
@@ -53,14 +63,30 @@ const Contact = () => {
           </div>
         </div>
         <div className="col-span-5 lg:col-span-3 grid grid-cols-2 gap-3  lg:gap-2">
-          <input className="col-span-2 sm:col-span-1 outline-0 rounded-[20px] bg-[#252525] max-h-[50px] p-[15px] " placeholder="YOUR NAME" type="text" />
-          <input className="col-span-2 sm:col-span-1 outline-0 rounded-[20px] bg-[#252525] max-h-[50px] p-[15px] " placeholder="YOUR EMAIL" type="text" />
+          <input
+            className="col-span-2 sm:col-span-1 outline-0 rounded-[20px] bg-[#252525] max-h-[50px] p-[15px] "
+            placeholder="YOUR NAME"
+            type="text"
+          />
+          <input
+            className="col-span-2 sm:col-span-1 outline-0 rounded-[20px] bg-[#252525] max-h-[50px] p-[15px] "
+            placeholder="YOUR EMAIL"
+            type="text"
+          />
           <input
             className="col-span-2 outline-0 rounded-[20px] bg-[#252525] max-h-[50px] p-[15px]"
             placeholder="YOUR SUBJECT"
             type="text"
           />
-          <textarea className="col-span-2 outline-0 rounded-[20px] min-h-[120px] bg-[#252525] p-[15px]" placeholder="YOUR MESSAGE" />
+          <textarea
+            className="col-span-2 outline-0 rounded-[20px] min-h-[120px] bg-[#252525] p-[15px]"
+            placeholder="YOUR MESSAGE"
+          />
+          <button className="text-[15px] font-semibold bg-transparent text-center rounded-[25px] leading-[1.4] p-[12px] border-2 border-amber-500">
+            <div className="flex gap-x-[15px] items-center">
+              <div className="font-bold">Send To Me</div>
+            </div>
+          </button>
         </div>
       </div>
     </section>

@@ -4,7 +4,17 @@ import ArrowCircleIcon from "@/common/svg/ArrowCircleIcon";
 
 const HomePage: React.FC = () => {
   return (
-    <section className="w-full h-screen ">
+    <section
+      data-aos="fade-down"
+      data-aos-offset="200"
+      data-aos-delay="500"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top-center"
+      className="w-full h-screen overflow-hidden"
+    >
       <div className="bg-[#ffb400] fixed lg:block hidden h-[200%] w-[100%] left-[-83%] rotate-[-15deg] top-[-50%]"></div>
       <div className="">
         <div className="box rounded-[30px] fixed top-[40px] left-[40px] bg-avatar bg-top bg-no-repeat bg-cover left-[40px] top-[40px] z-50 lg:block hidden h-[90%] w-[30%]"></div>

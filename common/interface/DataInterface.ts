@@ -19,4 +19,10 @@ export interface DetailProjectInterface {
     project: string;
     tech: string;
     link?: string;
+    description: string
+}
+
+export interface MenuItem {
+    title: string;
+    icon: React.ReactNode
 }

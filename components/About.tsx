@@ -2,12 +2,22 @@ import DownloadIcon from "@/common/svg/DownloadIcon";
 import BagIcon from "@/common/svg/BagIcon";
 import Progress from "./shared/Progress";
 import { MY_SKILL } from "@/common/constant/data";
-import { SkillIntefece } from "@/common/interface/DataInterface"
+import { SkillIntefece } from "@/common/interface/DataInterface";
 
 const About = () => {
   return (
-    <section className="text-white container mx-auto">
-      <div>
+    <section
+      data-aos="fade-down"
+      data-aos-offset="200"
+      data-aos-delay="500"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top-center"
+      className="text-white container mx-auto py-[20px]"
+    >
+      <div data-aos="fade-left">
         <div className="uppercase font-bold w-full py-[80px] text-4xl text-center">
           About{" "}
           <span className="text-primary-yellow font-bold uppercase">Me</span>
@@ -108,29 +118,50 @@ const About = () => {
             </div>
           </div>
         </div>
-{/*=========================================================START MY SKILL SECTION===================================================================== */}
-        <div>
+        {/*=========================================================START MY SKILL SECTION===================================================================== */}
+        <div
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="true"
+          data-aos-anchor-placement="top-center"
+          className="text-white container mx-auto"
+        >
           <div className="uppercase text-left lg:text-center font-semibold mb-3 pl-2 text-2xl">
             My Skill
           </div>
           <div className="grid grid-cols-4 justify-items-center items-center">
-            {
-                MY_SKILL.map((item: SkillIntefece, index:number) => {
-                  return (
-                    <div key={`my-skill-${index}`} className="lg:col-span-1 col-span-2 flex flex-col items-center">
-                        <Progress percentage={item.percentage} width={90} height={200} />
-                      <div className="text-center">{item.title}</div>
-                    </div>
-                  )
-                } )
-            }
+            {MY_SKILL.map((item: SkillIntefece, index: number) => {
+              return (
+                <div
+                  key={`my-skill-${index}`}
+                  className="lg:col-span-1 col-span-2 flex flex-col items-center"
+                >
+                  <Progress
+                    percentage={item.percentage}
+                    width={90}
+                    height={200}
+                  />
+                  <div className="text-center">{item.title}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
-{/*=========================================================END MY SKILL SECTION========================================================================= */}
-{/*=========================================================START EXPERIENCE & EDUCTION SECTION========================================================== */}
+        {/*=========================================================END MY SKILL SECTION========================================================================= */}
+        {/*=========================================================START EXPERIENCE & EDUCTION SECTION========================================================== */}
         <hr className="border border-[#252525] my-[55px]" />
-        <div>
+        <div
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="true"
+          data-aos-anchor-placement="top-center"
+          className="text-white container mx-auto"
+        >
           <div className="uppercase text-left lg:text-center font-semibold mb-3 pl-2 text-2xl">
             Experience & Education
           </div>
@@ -196,7 +227,7 @@ const About = () => {
             </div>
           </div>
         </div>
-{/*=========================================================END EXPERIENCE & EDUCTION SECTION========================================================== */}
+        {/*=========================================================END EXPERIENCE & EDUCTION SECTION========================================================== */}
       </div>
     </section>
   );
