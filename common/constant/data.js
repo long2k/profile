@@ -8,7 +8,7 @@ import MessageIcon from "@/common/svg/MessageIcon"
 export const MY_SKILL = [
 {
     title:"HTML/CSS",
-    percentage: 70,
+    percentage: 80,
 },
 {
     title: "JAVASCRIPT/TYPESCRIPT",
@@ -16,15 +16,15 @@ export const MY_SKILL = [
 },
 {
     title: "NODEJS/EXPRESS",
-    percentage: 80,
+    percentage: 70,
 },
 {
     title: "DJANGO/FASTAPI",
-    percentage: 80,
+    percentage: 70,
 },
 {
     title: "JAVA SPRING",
-    percentage: 80,
+    percentage: 50,
 },
 {
     title: "REACTJS",
@@ -36,7 +36,7 @@ export const MY_SKILL = [
 },
 {
     title: "VUEJS",
-    percentage: 80,
+    percentage: 60,
 }
 ]
 

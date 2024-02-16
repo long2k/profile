@@ -1,3 +1,6 @@
+"use client"
+import { useEffect, useState } from "react";
+
 import DownloadIcon from "@/common/svg/DownloadIcon";
 import BagIcon from "@/common/svg/BagIcon";
 import Progress from "./shared/Progress";
@@ -5,6 +8,35 @@ import { MY_SKILL } from "@/common/constant/data";
 import { SkillIntefece } from "@/common/interface/DataInterface";
 
 const About = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 0,
+    height: typeof window !== 'undefined' ? window.innerHeight : 0,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleRedirect = (contact: string) => {
+    switch(contact) {
+      case "MAIL":
+          window.open("mailto:truongquanglong777@gmail.com");
+          break;
+      default: 
+        // do nothing
+          break;
+    }
+   
+  }
   return (
     <section
       data-aos="fade-down"
@@ -15,7 +47,7 @@ const About = () => {
       data-aos-mirror="true"
       data-aos-once="false"
       data-aos-anchor-placement="top-center"
-      className="text-white container mx-auto py-[20px]"
+      className="text-white w-fit h-full container mx-auto py-[20px]"
     >
       <div data-aos="fade-left">
         <div className="uppercase font-bold w-full py-[80px] text-4xl text-center">
@@ -33,7 +65,7 @@ const About = () => {
             <div className="col-span-1 flex flex-col gap-y-5">
               <div>
                 <div className="text-gray-400 text-base">First Name:</div>
-                <div className="text-white text-base">Kojo</div>
+                <div className="text-white text-base">Darius</div>
               </div>
               <div>
                 <div className="text-gray-400 text-base">Age:</div>
@@ -49,7 +81,7 @@ const About = () => {
               </div>
               <div>
                 <div className="text-gray-400 text-base">Skype:</div>
-                <div className="text-white text-base">Kojo777</div>
+                <div className="text-white text-base">truongquanglong777</div>
               </div>
             </div>
             <div className="col-span-1 flex flex-col gap-5">
@@ -67,14 +99,14 @@ const About = () => {
               </div>
               <div>
                 <div className="text-gray-400 text-base">Email:</div>
-                <div className="text-white text-sm">longtq777@gmail.com</div>
+                <div className="text-white text-[10px] sm:text-sm">truongquanglong777@gmail.com</div>
               </div>
               <div>
                 <div className="text-gray-400 text-base">Languages:</div>
                 <div className="text-white text-base">Vietnamese, English</div>
               </div>
             </div>
-            <div className="col-span-1">
+            {/* <div className="col-span-1">
               <div className="lg:block flex justify-center items-center pt-5">
                 <button className="text-[15px] font-semibold bg-transparent text-center rounded-[25px] leading-[1.4] p-[12px] border-2 border-amber-500">
                   <div className="flex gap-x-[15px] items-center">
@@ -85,7 +117,7 @@ const About = () => {
                   </div>
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="lg:col-span-1 col-span-2 grid grid-cols-2 gap-5 justify-items-center pt-5">
             <div className="col-span-1 border-2 border-primary-gray min-w-[150px] h-fit p-5">
@@ -97,21 +129,21 @@ const About = () => {
             </div>
             <div className="col-span-1 border-2 border-primary-gray min-w-[150px] h-fit p-5">
               <div className="uppercase font-semibold text-lg text-primary-yellow">
-                97
+                10
               </div>
               <div className="uppercase text-white">Completed</div>
               <div className="uppercase text-white">Project</div>
             </div>
             <div className="col-span-1 border-2 border-primary-gray min-w-[150px] h-fit p-5">
               <div className="uppercase font-semibold text-lg text-primary-yellow">
-                81
+                4
               </div>
               <div className="uppercase text-white">Happy</div>
               <div className="uppercase text-white">Customers</div>
             </div>
             <div className="col-span-1 border-2 border-primary-gray min-w-[150px] h-fit p-5">
               <div className="uppercase font-semibold text-lg text-primary-yellow">
-                53
+                5
               </div>
               <div className="uppercase text-white">Awards</div>
               <div className="uppercase text-white">won</div>
@@ -119,15 +151,7 @@ const About = () => {
           </div>
         </div>
         {/*=========================================================START MY SKILL SECTION===================================================================== */}
-        <div
-          data-aos="fade-left"
-          data-aos-duration="1000"
-          data-aos-easing="ease-in-out"
-          data-aos-mirror="true"
-          data-aos-once="true"
-          data-aos-anchor-placement="top-center"
-          className="text-white container mx-auto"
-        >
+        <div className="text-white container mx-auto" >
           <div className="uppercase text-left lg:text-center font-semibold mb-3 pl-2 text-2xl">
             My Skill
           </div>
@@ -153,16 +177,8 @@ const About = () => {
         {/*=========================================================END MY SKILL SECTION========================================================================= */}
         {/*=========================================================START EXPERIENCE & EDUCTION SECTION========================================================== */}
         <hr className="border border-[#252525] my-[55px]" />
-        <div
-          data-aos="fade-right"
-          data-aos-duration="1000"
-          data-aos-easing="ease-in-out"
-          data-aos-mirror="true"
-          data-aos-once="true"
-          data-aos-anchor-placement="top-center"
-          className="text-white container mx-auto"
-        >
-          <div className="uppercase text-left lg:text-center font-semibold mb-3 pl-2 text-2xl">
+        <div className="text-white container mx-auto">
+          <div className="uppercase text-left lg:text-center font-semibold mb-3 pb-[100px] pl-2 text-2xl">
             Experience & Education
           </div>
           <div className="grid grid-cols-2 justify-items-center">
@@ -180,8 +196,8 @@ const About = () => {
                   </div>
                   <div className="text-xl uppercase">Backend Developer</div>
                   <div className="text-base text-gray-400">
-                    Lorem ipsum dolor sit amet, consectetur tempor incididunt ut
-                    laboreadipisicing elit
+                    I worked at Meey Land company as a back-end developer. 
+                    I taked over developing system for admin web and chat app 
                   </div>
                 </div>
               </div>
@@ -196,10 +212,10 @@ const About = () => {
                   <div className="text-sm bg-primary-gray rounded-[10px] py-[3px] px-[15px] w-fit text-center">
                     2022 - Present
                   </div>
-                  <div className="text-xl uppercase">FullStack Developer</div>
+                  <div className="text-xl uppercase">Full-Stack Developer</div>
                   <div className="text-base text-gray-400">
-                    Lorem ipsum dolor sit amet, consectetur tempor incididunt ut
-                    laboreadipisicing elit
+                    For now, I am working at AHT Tech Company.
+                    I develop many web app of customers for front-end side and back-end site.
                   </div>
                 </div>
               </div>
@@ -217,10 +233,10 @@ const About = () => {
                   <div className="text-sm bg-primary-gray rounded-[10px] py-[3px] px-[15px] w-fit text-center">
                     2018 - 2023
                   </div>
-                  <div className="text-xl uppercase">Backend Developer</div>
+                  <div className="text-xl uppercase">Student</div>
                   <div className="text-base text-gray-400">
-                    Lorem ipsum dolor sit amet, consectetur tempor incididunt ut
-                    laboreadipisicing elit
+                    I studied at PTIT - Posts and Telecommunications Institute of Technology,
+                    majoring in information systems. And I graduated from 2023.
                   </div>
                 </div>
               </div>

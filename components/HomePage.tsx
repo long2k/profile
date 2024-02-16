@@ -1,8 +1,11 @@
 import React from "react";
-import Image from "next/image";
 import ArrowCircleIcon from "@/common/svg/ArrowCircleIcon";
+type SetTabType = React.Dispatch<React.SetStateAction<number>>;
 
-const HomePage: React.FC = () => {
+const HomePage = ({ tab, setTab }: { tab: number; setTab: SetTabType }) => {
+  const handleTab = (index:number) => {
+    setTab(index);
+  }
   return (
     <section
       data-aos="fade-down"
@@ -24,18 +27,17 @@ const HomePage: React.FC = () => {
               <div className="bg-avatar bg-cover bg-center bg-no-repeat border-[4px] border-[#252525] rounded-full w-[230px] h-[230px] sm:w-[270px] sm:h-[270px] " />
             </div>
             <div className="uppercase lg:text-left text-center text-primary-yellow text-4xl leading-[62px] font-bold">
-              <span className="lg:block hidden">-</span> I&apos;m KOJO TRUONG.
+              <span className="lg:block hidden">-</span> I&apos;m Darius.
               <br /> <span className="text-white">WEB DEVELOPER</span>
             </div>
             <div className="text-base leading-[35px] lg:text-left text-center">
-              I&apos;m a Tunisian based web designer &amp; front‑end developer
-              focused on crafting clean &amp; user‑friendly experiences, I am
-              passionate about building excellent software that improves the
-              lives of those around me.
+              I&apos;m full-stack web developer, focused on crafting clean &amp; 
+              user‑friendly experiences, I am passionate about building excellent software 
+              that improves the lives of those around me.
             </div>
             <div className="lg:block flex justify-center items-center pt-5">
               <button className="text-[15px] font-semibold bg-transparent text-center rounded-[25px] leading-[1.4] p-[12px] border-2 border-amber-500">
-                <div className="flex gap-x-[15px] items-center">
+                <div onClick={() => handleTab(1)} className="flex gap-x-[15px] items-center">
                   <div className="font-bold">More About Me</div>
                   <div className="">
                     <ArrowCircleIcon

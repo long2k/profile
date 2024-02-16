@@ -16,7 +16,7 @@ const Home: React.FC = () => {
     <main className="w-full h-screen relative">
       <Navigation tab={tab} setTab={setTab}/>
       {tab == 0 ? (
-        <HomePage />
+        <HomePage tab={tab} setTab={setTab}/>
       ) : tab == 1 ? (
         <About />
       ) : tab == 2 ? (

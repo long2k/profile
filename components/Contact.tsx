@@ -1,7 +1,32 @@
+import React, { useState } from "react";
+
+import ArrowCircleIcon from "@/common/svg/ArrowCircleIcon";
 import MailIcon from "@/common/svg/MailIcon";
 import MapIcon from "@/common/svg/MapIcon";
+import { ContactFormInterface } from "@/common/interface/DataInterface";
 
 const Contact = () => {
+  const [formValue, setFormValue] = useState<ContactFormInterface>({
+    email: "",
+    name: "",
+    subject: "",
+    content: "",
+  });
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
+    setFormValue((periodValue) => {
+      return {
+        ...periodValue,
+        [name]: value,
+      };
+    });
+  };
+  const handleContact = async () => {
+    try {
+    } catch (error) {}
+  };
   return (
     <section
       data-aos="fade-down"
@@ -18,7 +43,7 @@ const Contact = () => {
         Get In{" "}
         <span className="text-primary-yellow font-bold uppercase">Touch</span>
       </div>
-      <div className="grid grid-cols-5 gap-5">
+      <div className="grid grid-cols-5 gap-5 pb-[80px]">
         <div className="col-span-5 lg:col-span-2 flex flex-col gap-5">
           <div className="uppercase text-2xl">Don&lsquo;t Be Shy!</div>
           <div>
@@ -62,32 +87,57 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-5 lg:col-span-3 grid grid-cols-2 gap-3  lg:gap-2">
+        <form className="col-span-5 lg:col-span-3 grid grid-cols-2 gap-3  lg:gap-2">
           <input
             className="col-span-2 sm:col-span-1 outline-0 rounded-[20px] bg-[#252525] max-h-[50px] p-[15px] "
             placeholder="YOUR NAME"
             type="text"
+            name="name"
+            value={formValue.name}
+            onChange={handleChange}
+            required
           />
           <input
             className="col-span-2 sm:col-span-1 outline-0 rounded-[20px] bg-[#252525] max-h-[50px] p-[15px] "
             placeholder="YOUR EMAIL"
-            type="text"
+            type="email"
+            name="email"
+            value={formValue.email}
+            onChange={handleChange}
+            required
           />
           <input
             className="col-span-2 outline-0 rounded-[20px] bg-[#252525] max-h-[50px] p-[15px]"
             placeholder="YOUR SUBJECT"
             type="text"
+            name="subject"
+            value={formValue.subject}
+            onChange={handleChange}
+            required
           />
           <textarea
             className="col-span-2 outline-0 rounded-[20px] min-h-[120px] bg-[#252525] p-[15px]"
             placeholder="YOUR MESSAGE"
+            value={formValue.content}
+            name="content"
+            onChange={handleChange}
+            required
           />
-          <button className="text-[15px] font-semibold bg-transparent text-center rounded-[25px] leading-[1.4] p-[12px] border-2 border-amber-500">
+          <button
+            type="submit"
+            onClick={handleContact}
+            className="max-w-fit mt-[3px] bg-transparent rounded-[25px] leading-[1.4] py-2 px-[10px] border-2 border-amber-500"
+          >
             <div className="flex gap-x-[15px] items-center">
-              <div className="font-bold">Send To Me</div>
+              <div className="font-semibold text-[15px] text-center">
+                Send Me
+              </div>
+              <div className="">
+                <ArrowCircleIcon width="24" height="24" style="fill-white" />
+              </div>
             </div>
           </button>
-        </div>
+        </form>
       </div>
     </section>
   );

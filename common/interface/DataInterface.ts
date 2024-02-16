@@ -26,3 +26,10 @@ export interface MenuItem {
     title: string;
     icon: React.ReactNode
 }
+
+export interface ContactFormInterface {
+    name: string;
+    email: string;
+    subject: string;
+    content: string;
+}
