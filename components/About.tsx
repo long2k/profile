@@ -1,7 +1,6 @@
 "use client"
 import { useEffect, useState } from "react";
 
-import DownloadIcon from "@/common/svg/DownloadIcon";
 import BagIcon from "@/common/svg/BagIcon";
 import Progress from "./shared/Progress";
 import { MY_SKILL } from "@/common/constant/data";

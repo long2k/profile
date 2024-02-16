@@ -44,72 +44,89 @@ export const TAB_VALUE = [
     {
         title: "All",
         key: "ALL"
-    }, 
-    {
-        title: "Outstanding",
-        key: "OUTSTANDING"
     }
+    // {
+    //     title: "Outstanding",
+    //     key: "OUTSTANDING"
+    // }
 ]
 
 export const PORTPOLIO_SHOW = [
     {
-        src: "/assets/image/project.jpg",
+        src: "/assets/image/web-admin.png",
         type:"OUTSTANDING",
         detail: {
-            project: "Website",
-            tech: "javacript", 
-            link: "",
-            description: "hello"
+            project: "Web-Admin",
+            tech: "VueJS, Nodejs(Express.js), Redis, MongoDB",
+            role: "Back-end Developer (Nodejs)",
+            link: "This app is security, so I cannot share link.",
+            description: "This app is used to manage all positions and services (meeyteam, online learning ...) of the company."
         }
     },
     {
-        src: "/assets/image/project.jpg",
+        src: "/assets/image/meey-team.png",
         type:"OUTSTANDING",
         detail: {
-            project: "Website",
-            tech: "javacript", 
+            project: "Meey Team App",
+            tech: "Flutter, Nodejs(Expressjs), Kafka, Socket.io, firebase, Redis, MinIO",
+            role: "Back-end Developer (Nodejs)",
             link: "",
-            description: "hello"
+            description: "This app is used to call video, chat or check information of the company."
         }
     },
     {
-        src: "/assets/image/project.jpg",
+        src: "/assets/image/ted.png",
         type:"OUTSTANDING",
         detail: {
-            project: "Website",
-            tech: "javacript", 
+            project: "TED App",
+            tech: "Vuejs, Django, FastApi, Posgresql, Hasura, GraphQL",
+            role: "Full-stack Developer",
             link: "",
-            description: "hello"
+            description: "Management application for patient treatment and diagnoses."
         }
     },
     {
-        src: "/assets/image/project.jpg",
+        src: "/assets/image/hub-board.png",
         type:"MOI",
         detail: {
-            project: "Website",
-            tech: "javacript", 
+            project: "Hub-DashBoard",
+            tech: "Reactjs, Microsoft Team",
+            role: "Front-end Developer (Reactjs)",
             link: "",
             description: "hello"
         }
     },
     {
-        src: "/assets/image/project.jpg",
+        src: "/assets/image/int-map.png",
         type:"OUTSTANDING",
         detail: {
-            project: "Website",
-            tech: "javacript", 
+            project: "Map Int (client & admin)",
+            tech: "Reactjs, Fastapi, Postgresql, minIO",
+            role: "Full-stack Developer",
             link: "",
-            description: "hello"
+            description: "The application helps users classify data layers and assign locations to it."
         }
     },
+    // {
+    //     src: "/assets/image/project.jpg",
+    //     type:"OUTSTANDING",
+    //     detail: {
+    //         project: "CADAS OIS",
+    //         tech: "Java Spring, TypeScript, Winter-cardinal", 
+    //         role: "Full-stack Developer (Nodejs)",
+    //         link: "",
+    //         description: "hello"
+    //     }
+    // },
     {
-        src: "/assets/image/project.jpg",
+        src: "/assets/image/tango.png",
         type:"OUTSTANDING",
         detail: {
-            project: "Website",
-            tech: "javacript", 
+            project: "Tango App",
+            tech: "Fastapi, Django, Airtable, Nextjs", 
+            role: "Front-end Developer (Nextjs)",
             link: "",
-            description: "hello"
+            description: "The application supports scheduling and management of tourist destinations"
         }
     },
 ]

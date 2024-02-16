@@ -18,6 +18,7 @@ export interface ProjectInterface {
 export interface DetailProjectInterface {
     project: string;
     tech: string;
+    role: string;
     link?: string;
     description: string
 }
