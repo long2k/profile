@@ -143,11 +143,11 @@ export const NAVIGATION_LIST = [
     {
         title: "PortFolio",
         icon:  <BagIcon height="24" width="24" style="fill-white" />
-    },
-    {
-        title: "Contact",
-        icon: <MailIcon height="24" width="24" style="fill-white" />
-    },
+    }
+    // {
+    //     title: "Contact",
+    //     icon: <MailIcon height="24" width="24" style="fill-white" />
+    // },
     // {
     //     title: "Blog",
     //     icon: <MessageIcon height="24" width="24" style="fill-white" />
