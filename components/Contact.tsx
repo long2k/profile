@@ -4,6 +4,7 @@ import ArrowCircleIcon from "@/common/svg/ArrowCircleIcon";
 import MailIcon from "@/common/svg/MailIcon";
 import MapIcon from "@/common/svg/MapIcon";
 import { ContactFormInterface } from "@/common/interface/DataInterface";
+import axios from "axios";
 
 const Contact = () => {
   const [formValue, setFormValue] = useState<ContactFormInterface>({
@@ -25,6 +26,14 @@ const Contact = () => {
   };
   const handleContact = async () => {
     try {
+      const response = await fetch('/api/mail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formValue)
+      });
+
     } catch (error) {}
   };
   return (

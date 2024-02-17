@@ -14,16 +14,16 @@ const Navigation = ({ tab, setTab }: { tab: number; setTab: SetTabType }) => {
           let style = "";
           switch (index) {
             case 0: 
-                style = "bg-[#42a5f5] shadow-[0_20px_20px_-10px_rgba(66, 165, 245, 0.5)]"
+                style = "shadow-[0_20px_20px_-10px_rgba(66, 165, 245, 0.5)]"
                 break;
             case 1 :
-                style = "bg-[#4caf50] shadow-[0_20px_20px_-10px_rgba(76, 175, 80, 0.5)]"
+                style = "shadow-[0_20px_20px_-10px_rgba(76, 175, 80, 0.5)]"
                 break;
             case 2 :
-                style = "bg-[#ff9800] shadow-[0_20px_20px_-10px_rgba(255, 152, 0, 0.5)]"
+                style = "shadow-[0_20px_20px_-10px_rgba(255, 152, 0, 0.5)]"
                 break;
             case 3 :
-                style = "bg-[#42a5f5] shadow-[0_20px_20px_-10px_rgba(66, 165, 245, 0.5)]"
+                style = "shadow-[0_20px_20px_-10px_rgba(66, 165, 245, 0.5)]"
                 break;
             default: 
                 // do nothing
@@ -35,7 +35,7 @@ const Navigation = ({ tab, setTab }: { tab: number; setTab: SetTabType }) => {
               key={`menu-${index}`}
               className={`col-span-1 ${
                 index == tab ? "bg-primary-yellow" : ""
-              } ${style} float-element relative block rounded-[100px] w-[50px] h-[50px] mt-[15px] text-white hover:cursor-pointer opacity-0`}
+              } ${style} float-element bg-[#252525] hover:bg-primary-yellow  relative block rounded-[100px] w-[50px] h-[50px] mt-[15px] text-white hover:cursor-pointer opacity-0`}
               onClick={() => {
                 handleTab(index);
               }}

@@ -66,11 +66,12 @@ const PortFolio = () => {
                       <div>{data.detail.project}</div>
                     </div>
                     <Image
-                      width={150}
-                      height={150}
-                      className="w-full h-full rounded-[10px]"
+                      width={350}
+                      height={350}
+                      className="rounded-[10px]"
                       src={data.src}
                       alt={"project-image-${index}"}
+                      quality={100}
                     />
                   </div>
                 )

@@ -42,7 +42,7 @@ export const MY_SKILL = [
 
 export const TAB_VALUE = [
     {
-        title: "All",
+        title: "My Outstanding Projects",
         key: "ALL"
     }
     // {
@@ -90,10 +90,10 @@ export const PORTPOLIO_SHOW = [
         type:"MOI",
         detail: {
             project: "Hub-DashBoard",
-            tech: "Reactjs, Microsoft Team",
+            tech: "Reactjs, Microsoft Team Api",
             role: "Front-end Developer (Reactjs)",
             link: "",
-            description: "hello"
+            description: "This app is extension of Teams which helps user manage all informations of company and user's tasks"
         }
     },
     {
@@ -104,7 +104,7 @@ export const PORTPOLIO_SHOW = [
             tech: "Reactjs, Fastapi, Postgresql, minIO",
             role: "Full-stack Developer",
             link: "",
-            description: "The application helps users classify data layers and assign locations to it."
+            description: "The application helps users classify data layers on the map and assign locations to it."
         }
     },
     // {
