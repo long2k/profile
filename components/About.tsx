@@ -135,7 +135,7 @@ const About = () => {
             </div>
             <div className="col-span-1 border-2 border-primary-gray min-w-[150px] h-fit p-5">
               <div className="uppercase font-semibold text-lg text-primary-yellow">
-                4
+                6
               </div>
               <div className="uppercase text-white">Happy</div>
               <div className="uppercase text-white">Customers</div>

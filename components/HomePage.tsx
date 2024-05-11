@@ -31,7 +31,7 @@ const HomePage = ({ tab, setTab }: { tab: number; setTab: SetTabType }) => {
               <br /> <span className="text-white">WEB DEVELOPER</span>
             </div>
             <div className="text-base leading-[35px] lg:text-left text-center">
-              I&apos;m full-stack web developer, focused on crafting clean &amp; 
+              I&apos;m Full-stack Web Developer, focused on crafting clean &amp; 
               user‑friendly experiences, I am passionate about building excellent software 
               that improves the lives of those around me.
             </div>

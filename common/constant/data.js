@@ -42,7 +42,7 @@ export const MY_SKILL = [
 
 export const TAB_VALUE = [
     {
-        title: "My Outstanding Projects",
+        title: "Outstanding Projects",
         key: "ALL"
     }
     // {
@@ -53,82 +53,71 @@ export const TAB_VALUE = [
 
 export const PORTPOLIO_SHOW = [
     {
-        src: "/assets/image/web-admin.png",
-        type:"OUTSTANDING",
-        detail: {
-            project: "Web-Admin",
-            tech: "VueJS, Nodejs(Express.js), Redis, MongoDB",
-            role: "Back-end Developer (Nodejs)",
-            link: "This app is security, so I cannot share link.",
-            description: "This app is used to manage all positions and services (meeyteam, online learning ...) of the company."
-        }
-    },
-    {
-        src: "/assets/image/meey-team.png",
-        type:"OUTSTANDING",
+        src: "/assets/image/meeyteam.png",
+        type:"ALL",
         detail: {
             project: "Meey Team App",
-            tech: "Flutter, Nodejs(Expressjs), Kafka, Socket.io, firebase, Redis, MinIO",
-            role: "Back-end Developer (Nodejs)",
+            tech: "Flutter, NodeJS(ExpressJS), Kafka, Socket.io, firebase, Redis, MinIO, Docker",
+            role: "Back-end Developer (NodeJS)",
             link: "",
-            description: "This app is used to call video, chat or check information of the company."
+            description: "This app is used to call video, chat or check information of the Meeyland company."
         }
     },
     {
         src: "/assets/image/ted.png",
-        type:"OUTSTANDING",
+        type:"ALL",
         detail: {
             project: "TED App",
-            tech: "Vuejs, Django, FastApi, Posgresql, Hasura, GraphQL",
+            tech: "VueJS, Django, FastApi, Posgresql, Hasura, GraphQL, AWS, Docker",
             role: "Full-stack Developer",
             link: "",
             description: "Management application for patient treatment and diagnoses."
         }
     },
     {
-        src: "/assets/image/hub-board.png",
-        type:"MOI",
+        src: "/assets/image/hub-dashboard.png",
+        type:"ALL",
         detail: {
             project: "Hub-DashBoard",
-            tech: "Reactjs, Microsoft Team Api",
-            role: "Front-end Developer (Reactjs)",
+            tech: "ReactJS, Microsoft Team Api",
+            role: "Front-end Developer",
             link: "",
-            description: "This app is extension of Teams which helps user manage all informations of company and user's tasks"
+            description: "This app is extension of Teams which helps user manage all informations, celebrations of company and staff's tasks"
         }
     },
     {
-        src: "/assets/image/int-map.png",
-        type:"OUTSTANDING",
+        src: "/assets/image/int.png",
+        type:"ALL",
         detail: {
             project: "Map Int (client & admin)",
-            tech: "Reactjs, Fastapi, Postgresql, minIO",
+            tech: "ReactJS, Fastapi, Postgresql, MinIO, Docker",
             role: "Full-stack Developer",
             link: "",
             description: "The application helps users classify data layers on the map and assign locations to it."
         }
-    },
-    // {
-    //     src: "/assets/image/project.jpg",
-    //     type:"OUTSTANDING",
-    //     detail: {
-    //         project: "CADAS OIS",
-    //         tech: "Java Spring, TypeScript, Winter-cardinal", 
-    //         role: "Full-stack Developer (Nodejs)",
-    //         link: "",
-    //         description: "hello"
-    //     }
-    // },
-    {
-        src: "/assets/image/tango.png",
-        type:"OUTSTANDING",
+    },{
+        src: "/assets/image/rappid.png",
+        type:"ALL",
         detail: {
-            project: "Tango App",
-            tech: "Fastapi, Django, Airtable, Nextjs", 
-            role: "Front-end Developer (Nextjs)",
+            project: "Rappid",
+            tech: "VueJS, Fastapi, Postgresql, minIO, AWS, graphql, Docker",
+            role: "Front End Developer",
             link: "",
-            description: "The application supports scheduling and management of tourist destinations"
+            description: "Web application that supports ordering medical devices and drugs and managing orders"
         }
     },
+    {
+        src: "/assets/image/tango.png",
+        type:"ALL",
+        detail: {
+            project: "Tango",
+            tech: "NextJS, AirTable, FastApi, Docker",
+            role: "Front End Developer",
+            link: "",
+            description: "The application suggests tourist attractions, experiences and accompanying services. Addition, Survey to evaluate service quality"
+        }
+    },
+    
 ]
 
 export const NAVIGATION_LIST = [

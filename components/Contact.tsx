@@ -4,7 +4,6 @@ import ArrowCircleIcon from "@/common/svg/ArrowCircleIcon";
 import MailIcon from "@/common/svg/MailIcon";
 import MapIcon from "@/common/svg/MapIcon";
 import { ContactFormInterface } from "@/common/interface/DataInterface";
-import axios from "axios";
 
 const Contact = () => {
   const [formValue, setFormValue] = useState<ContactFormInterface>({

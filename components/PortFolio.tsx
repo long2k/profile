@@ -39,7 +39,7 @@ const PortFolio = () => {
                 onClick={() => {
                   handleTab(tab.key);
                 }}
-                className={`uppercase font-semibold hover:text-primary-yellow ${
+                className={`uppercase font-semibold fixed hover:text-primary-yellow ${
                   filter === tab.key ? "text-primary-yellow" : ""
                 }`}
                 key={`${tab.title}`}
@@ -63,7 +63,7 @@ const PortFolio = () => {
                     }}
                   >
                     <div className="hover:bg-primary-yellow absolute w-full h-full top-0 left-0 rounded-[10px] hover:flex hidden justify-center items-center">
-                      <div>{data.detail.project}</div>
+                      <div>{data?.detail?.project}</div>
                     </div>
                     <Image
                       width={350}
@@ -71,7 +71,6 @@ const PortFolio = () => {
                       className="rounded-[10px]"
                       src={data.src}
                       alt={"project-image-${index}"}
-                      quality={100}
                     />
                   </div>
                 )

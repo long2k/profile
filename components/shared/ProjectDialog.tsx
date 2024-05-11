@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { ProjectInterface } from "@/common/interface/DataInterface";
 import CloseIcon from "@/common/svg/CloseIcon";
 import Image from "next/image";
@@ -12,9 +12,22 @@ const ProjectDialog = ({
   setIsOpenPopup: SetIsOpenPopupType;
   project: ProjectInterface;
 }) => {
+  const dialogRef = useRef(null)
+  useEffect(() => {
+    const handleClick = (event: MouseEvent) => {
+      // if (dialogRef.current && !dialogRef.current.contains(event.target as Node)) {
+      //   setIsOpenPopup(false);
+      // }
+    };
+    document.addEventListener('click', handleClick, true);
+    return () => {
+      document.removeEventListener('click', handleClick, true);
+    };
+  }, [dialogRef]);
+
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="bg-primary-gray w-3/4 p-8 rounded relative shadow-md">
+    <div ref={dialogRef} className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-[500]">
+      <div className="bg-primary-gray p-8 rounded relative shadow-md md:max-w-[460px] xl:max-w-[900px]">
         <button
           className="absolute top-[5%] right-[5%] sm:top-[-10%] sm:right-[-10%]"
           onClick={() => setIsOpenPopup(false)}
