@@ -3,6 +3,9 @@
 @tailwind utilities;
 @import "@fortawesome/fontawesome-free/css/all.css";
 
+/* =============================================
+   BASE
+   ============================================= */
 body {
   width: 100%;
   min-height: 100vh;
@@ -13,28 +16,15 @@ body {
   font-size: 15px;
   color: #fff;
   font-weight: 500;
-
-  position: relative;
-  background-size: cover;
-  background-position: 50%;
   background-color: #111;
 }
 
-.h-img {
-  height: calc(100vh - 80px);
-}
-
-.box {
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.9);
-}
-
-.svg-image {
-  fill: #ffffff; /* Change this to the desired color */
-}
+.h-img  { height: calc(100vh - 80px); }
+.box    { box-shadow: 0 0 7px rgba(0, 0, 0, 0.9); }
+.svg-image { fill: #ffffff; }
 
 .square {
   position: absolute;
-  content: "";
   background-color: white;
   height: 180%;
   width: 1px;
@@ -42,59 +32,499 @@ body {
   left: 50%;
 }
 
-circle {
-  transition: all 0.7s ease-in-out;
+circle { transition: all 0.7s ease-in-out; }
+
+/* Scrollbar */
+::-webkit-scrollbar              { width: 6px; }
+::-webkit-scrollbar-track        { background: #414141; }
+::-webkit-scrollbar-thumb        { background: #888; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover  { background: #555; }
+
+/* =============================================
+   PAGE TRANSITION
+   ============================================= */
+@keyframes page-fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0);    }
 }
 
-/* scroll bar  */
-::-webkit-scrollbar {
-  width: 6px;
+.page-enter {
+  animation: page-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-::-webkit-scrollbar-track {
-  background: #414141;
+/* =============================================
+   NAVIGATION — vertical sidebar
+   ============================================= */
+
+/* Nav button base transition */
+.float-element {
+  transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 6px;
+/* Tooltip */
+.nav-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  background: #1e1e1e;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  border: 1px solid rgba(255, 180, 0, 0.25);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(-50%) translateX(6px);
+}
+.float-element:hover .nav-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+/* =============================================
+   HERO — BACKGROUND
+   ============================================= */
+@keyframes bg-shift {
+  0%, 100% { transform: rotate(-15deg) translateX(0);  }
+  50%       { transform: rotate(-14deg) translateX(8px); }
+}
+.hero-bg { animation: bg-shift 8s ease-in-out infinite; }
+
+/* Ambient glows */
+@keyframes particle-drift {
+  0%, 100% { transform: translateY(0)    scale(1);    opacity: 0.5; }
+  50%       { transform: translateY(-30px) scale(1.05); opacity: 0.8; }
+}
+.hero-particle   { animation: particle-drift 7s ease-in-out infinite;      }
+.hero-particle-2 { animation: particle-drift 5s ease-in-out infinite 1.5s; }
+
+/* =============================================
+   HERO — AVATAR
+   ============================================= */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0);    }
+  50%       { transform: translateY(-12px); }
+}
+.avatar-float { animation: float-y 4s ease-in-out infinite; }
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.avatar-ring { animation: spin-slow 14s linear infinite; }
+
+/* =============================================
+   HERO — TEXT STAGGER REVEAL
+   ============================================= */
+@keyframes hero-reveal {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0);     }
 }
 
+.hero-text-1 { animation: hero-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.10s both; }
+.hero-text-2 { animation: hero-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both; }
+.hero-text-3 { animation: hero-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.40s both; }
+.hero-text-4 { animation: hero-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both; }
+.hero-text-5 { animation: hero-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.70s both; }
 
-@keyframes come-in {
-  0% {
-    opacity: 0;
-  }
-  30% {
-    transform: translateX(-50px) scale(0.4);
-  }
-  70% {
-    transform: translateX(0px) scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+/* =============================================
+   HERO — TYPEWRITER CURSOR
+   ============================================= */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  background: #ffb400;
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: cursor-blink 0.85s ease-in-out infinite;
 }
 
+/* =============================================
+   HERO — SOCIAL LINKS
+   ============================================= */
+.social-link {
+  transition: transform 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  will-change: transform;
+}
+.social-link:hover { transform: translateY(-4px); }
 
-
-.floating-container:hover .element-container .float-element:nth-child(1) {
-  animation: come-in 0.4s forwards 0.2s;
+/* =============================================
+   HERO — CTA BUTTON
+   ============================================= */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  will-change: transform;
+}
+.btn-glow::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 180, 0, 0.15), transparent);
+  transition: left 0.5s ease;
+}
+.btn-glow:hover::before  { left: 100%; }
+.btn-glow:hover {
+  border-color: #ffb400;
+  box-shadow: 0 0 20px rgba(255, 180, 0, 0.4), 0 0 40px rgba(255, 180, 0, 0.12);
+  transform: translateY(-2px);
 }
 
-.floating-container:hover .element-container .float-element:nth-child(2) {
-  animation: come-in 0.4s forwards 0.4s;
+/* =============================================
+   HERO — SCROLL INDICATOR
+   ============================================= */
+@keyframes scroll-line-drop {
+  0%   { clip-path: inset(0 0 100% 0); }
+  50%  { clip-path: inset(0 0 0%   0); }
+  100% { clip-path: inset(100% 0 0 0); }
+}
+.scroll-line { animation: scroll-line-drop 2s ease-in-out infinite; }
+
+@keyframes scroll-fade {
+  0%, 100% { opacity: 0.25; transform: translateX(-50%) translateY(0);  }
+  50%       { opacity: 0.55; transform: translateX(-50%) translateY(5px); }
+}
+.scroll-indicator { animation: scroll-fade 2.2s ease-in-out infinite; }
+
+/* =============================================
+   ABOUT — STAT BOXES
+   ============================================= */
+.stat-box {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: default;
+}
+.stat-box:hover {
+  border-color: #ffb400 !important;
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(255, 180, 0, 0.2);
+}
+.stat-box:hover .stat-number {
+  text-shadow: 0 0 20px rgba(255, 180, 0, 0.6);
 }
 
-.floating-container:hover .element-container .float-element:nth-child(3) {
-  animation: come-in 0.4s forwards 0.6s;
+/* Available dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1);   }
+  50%       { opacity: 0.5; transform: scale(1.3); }
+}
+.available-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  margin-right: 6px;
+  animation: pulse-dot 1.5s ease-in-out infinite;
 }
 
-.floating-container:hover .element-container .float-element:nth-child(4) {
-  animation: come-in 0.4s forwards 0.8s;
+/* Section title */
+.section-title { position: relative; display: inline-block; }
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -6px; left: 50%;
+  transform: translateX(-50%);
+  width: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, #ffb400, transparent);
+  transition: width 0.6s ease;
+}
+.section-title:hover::after { width: 80%; }
+
+/* Skill item */
+.skill-item { transition: transform 0.3s ease; }
+.skill-item:hover { transform: translateY(-4px); }
+.skill-item:hover circle { filter: drop-shadow(0 0 6px rgba(255, 180, 0, 0.5)); }
+
+/* Timeline */
+.timeline-item { transition: transform 0.3s ease; }
+.timeline-item:hover { transform: translateX(6px); }
+
+/* Stagger fade-in */
+@keyframes stagger-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0);     }
+}
+.stagger-item                    { animation: stagger-in 0.5s ease both; }
+.stagger-item:nth-child(1)       { animation-delay: 0.1s; }
+.stagger-item:nth-child(2)       { animation-delay: 0.2s; }
+.stagger-item:nth-child(3)       { animation-delay: 0.3s; }
+.stagger-item:nth-child(4)       { animation-delay: 0.4s; }
+.stagger-item:nth-child(5)       { animation-delay: 0.5s; }
+.stagger-item:nth-child(6)       { animation-delay: 0.6s; }
+
+/* =============================================
+   PORTFOLIO — FILTER BUTTON
+   ============================================= */
+.filter-btn {
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.25s ease;
+}
+.filter-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: #ffb400;
+  transition: width 0.3s ease;
+}
+.filter-btn.active::after,
+.filter-btn:hover::after { width: 100%; }
+
+/* =============================================
+   PORTFOLIO — PROJECT CARD
+   ============================================= */
+.project-card {
+  transition: box-shadow 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.project-card:hover {
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 180, 0, 0.25);
+  transform: translateY(-6px);
+}
+
+.project-card-img {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.project-card:hover .project-card-img { transform: scale(1.08); }
+
+.project-card-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(17, 17, 17, 0.97) 0%,
+    rgba(17, 17, 17, 0.75) 45%,
+    rgba(17, 17, 17, 0.05) 100%
+  );
+  transform: translateY(100%);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.project-card:hover .project-card-overlay { transform: translateY(0); }
+
+.project-card-accent {
+  height: 3px;
+  background: #ffb400;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.project-card:hover .project-card-accent { transform: scaleX(1); }
+
+.card-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffb400;
+  border: 1.5px solid rgba(255, 180, 0, 0.5);
+  border-radius: 20px;
+  padding: 6px 16px;
+  transition: background 0.2s ease, border-color 0.2s ease, gap 0.2s ease;
+}
+.project-card:hover .card-cta-btn {
+  background: rgba(255, 180, 0, 0.1);
+  border-color: #ffb400;
+  gap: 12px;
+}
+
+/* =============================================
+   PORTFOLIO — TECH TAGS
+   ============================================= */
+.tech-tag {
+  display: inline-block;
+  background: rgba(255, 180, 0, 0.12);
+  border: 1px solid rgba(255, 180, 0, 0.35);
+  color: #ffb400;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.tech-tag:hover {
+  background: rgba(255, 180, 0, 0.22);
+  border-color: #ffb400;
+}
+
+/* =============================================
+   PROJECT DIALOG
+   ============================================= */
+@keyframes backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes dialog-in {
+  from { opacity: 0; transform: scale(0.88) translateY(24px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0);    }
+}
+.dialog-backdrop { animation: backdrop-in 0.25s ease both; }
+.dialog-panel    { animation: dialog-in   0.35s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+.dialog-hero-gradient {
+  background: linear-gradient(
+    to top,
+    rgba(26, 26, 26, 1)    0%,
+    rgba(26, 26, 26, 0.75) 35%,
+    rgba(26, 26, 26, 0.1)  75%,
+    transparent            100%
+  );
+}
+
+.dialog-nav-btn {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.22s ease;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+.dialog-nav-btn:hover:not(:disabled) {
+  border-color: #ffb400;
+  background: rgba(255, 180, 0, 0.1);
+  color: #ffb400;
+}
+.dialog-nav-btn:disabled { opacity: 0.25; cursor: not-allowed; }
+
+.dialog-info-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  padding-bottom: 14px;
+}
+.dialog-info-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+.dialog-close-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.dialog-close-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: rotate(90deg);
+}
+
+.project-counter {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* =============================================
+   ABOUT — SKILL BARS
+   ============================================= */
+@keyframes skill-bar-fill {
+  from { width: 0; }
+  to   { width: var(--skill-pct); }
+}
+
+.skill-bar-fill {
+  width: var(--skill-pct);
+  animation: skill-bar-fill 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
+
+/* Stat card hover (redesigned) */
+.stat-card {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: default;
+}
+.stat-card:hover {
+  border-color: #ffb400 !important;
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 40px rgba(255, 180, 0, 0.18);
+}
+.stat-card:hover .stat-number {
+  text-shadow: 0 0 20px rgba(255, 180, 0, 0.6);
+}
+
+/* Info field card */
+.info-field {
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+}
+.info-field:hover {
+  border-color: rgba(255, 180, 0, 0.3) !important;
+  background: #1b1b1b !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+.info-field-icon {
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+.info-field:hover .info-field-icon {
+  background: rgba(255, 180, 0, 0.1);
+  border-color: rgba(255, 180, 0, 0.3);
+  color: #ffb400;
+}
+
+/* =============================================
+   ABOUT — DOWNLOAD CV BUTTON
+   ============================================= */
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffb400;
+  border: 1.5px solid rgba(255, 180, 0, 0.4);
+  border-radius: 25px;
+  padding: 9px 22px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.cv-download-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 180, 0, 0.07);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.cv-download-btn:hover {
+  border-color: #ffb400;
+  box-shadow: 0 0 22px rgba(255, 180, 0, 0.3), 0 0 8px rgba(255, 180, 0, 0.15);
+  transform: translateY(-2px);
+}
+.cv-download-btn:hover::before { opacity: 1; }
+.cv-download-btn:active { transform: translateY(0) scale(0.97); }
+
+/* =============================================
+   ABOUT — STAT CARD ICON
+   ============================================= */
+.stat-card-icon {
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.stat-card:hover .stat-card-icon {
+  background: rgba(255, 180, 0, 0.2);
+  border-color: rgba(255, 180, 0, 0.5);
+  transform: scale(1.1);
+}
+
+/* =============================================
+   ABOUT — TIMELINE SUBTITLE
+   ============================================= */
+.timeline-subtitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 180, 0, 0.7);
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
 }

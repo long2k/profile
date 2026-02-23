@@ -20,7 +20,8 @@ export interface DetailProjectInterface {
     tech: string;
     role: string;
     link?: string;
-    description: string
+    description: string;
+    responsible?: string[];
 }
 
 export interface MenuItem {

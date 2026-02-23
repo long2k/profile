@@ -17,7 +17,7 @@ const MailIcon = (props: SvgInterface) => {
       <path
         d="M4 10L6.41421 12.4142C6.78929 12.7893 7.29799 13 7.82843 13H16.1716C16.702 13 17.2107 12.7893 17.5858 12.4142L20 10"
         stroke="#222222"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
     </svg>
   );
