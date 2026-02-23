@@ -7,24 +7,24 @@ import MessageIcon from "@/common/svg/MessageIcon"
 
 export const MY_SKILL = [
 {
-    title:"HTML/CSS",
+    title:"HTML / CSS",
     percentage: 80,
 },
 {
-    title: "JAVASCRIPT/TYPESCRIPT",
+    title: "JAVASCRIPT / TYPESCRIPT",
     percentage: 80,
 },
 {
-    title: "NODEJS/EXPRESS",
+    title: "NODEJS",
     percentage: 70,
 },
+// {
+//     title: "DJANGO/FASTAPI",
+//     percentage: 70,
+// },
 {
-    title: "DJANGO/FASTAPI",
+    title: "JAVA / SPRING BOOT",
     percentage: 70,
-},
-{
-    title: "JAVA SPRING",
-    percentage: 50,
 },
 {
     title: "REACTJS",
