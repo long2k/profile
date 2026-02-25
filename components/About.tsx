@@ -265,12 +265,12 @@ const About = () => (
 
     {/* ══ STATS ═══════════════════════════════════════════════════════ */}
     <div
-      className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16"
+      className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16 max-w-2xl mx-auto lg:max-w-none"
       data-aos="fade-up"
       data-aos-delay="100"
     >
       <StatCard
-        value="2.5"
+        value="4"
         line1="Years of"
         line2="Experience"
         icon={
@@ -290,7 +290,7 @@ const About = () => (
         }
       />
       <StatCard
-        value="6"
+        value="7"
         line1="Happy"
         line2="Customers"
         icon={
@@ -299,7 +299,7 @@ const About = () => (
           </svg>
         }
       />
-      <StatCard
+      {/* <StatCard
         value="5"
         line1="Awards"
         line2="Won"
@@ -308,7 +308,7 @@ const About = () => (
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
           </svg>
         }
-      />
+      /> */}
     </div>
 
     {/* ══ DIVIDER ═════════════════════════════════════════════════════ */}
@@ -355,14 +355,21 @@ const About = () => (
             period="2021 – 2022"
             title="Backend Developer"
             subtitle="Meey Land"
-            description="Built admin systems and a real-time chat application using NodeJS, Socket.io and Kafka."
+            description="Developed admin systems and a real-time communication platform using Node.js, Socket.io, and Kafka, with a focus on scalability, performance, and reliability."
             aosDelay={100}
           />
           <TimelineItem
-            period="2022 – Present"
+            period="2022 – 2025"
             title="Full-Stack Developer"
             subtitle="AHT Tech Company"
-            description="Developing web applications for clients across both front-end and back-end stacks."
+            description="Developed full-stack web applications for domestic and international clients, contributing across the entire software development lifecycle — from requirements analysis and system design to deployment and maintenance."
+            aosDelay={200}
+          />
+          <TimelineItem
+            period="2025 – Current"
+            title="Full-Stack Developer"
+            subtitle="BigMouth Company"
+            description="Developing in-house products and delivering outsourced solutions for client companies, contributing across the full-stack development cycle with a focus on code quality and team collaboration."
             aosDelay={200}
           />
         </div>
@@ -377,7 +384,7 @@ const About = () => (
             period="2018 – 2023"
             title="Information Systems"
             subtitle="PTIT — Posts & Telecommunications Institute of Technology"
-            description="Graduated majoring in Information Systems."
+            description="Earned a Bachelor's degree in Information Systems, with coursework covering software engineering, databases, network infrastructure, and application development."
             aosDelay={150}
           />
         </div>
