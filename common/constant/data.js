@@ -146,7 +146,7 @@ export const PORTPOLIO_SHOW = [
         }
     },
     {
-        src: "/assets/image/tango.png",
+        src: "/assets/image/ops-sapp.png",
         type: "ALL",
         detail: {
             project: "SAPP",
